@@ -3,9 +3,15 @@ import { Route } from 'react-router-dom';
 import data from './data';
 
 // Components
+import React, { useContext } from "react";
+import ProductContext from './contexts/ProductsContext'
+
 import Navigation from './components/Navigation';
 import Products from './components/Products';
 import ShoppingCart from './components/ShoppingCart';
+
+import data from './data';
+
 
 function App() {
 	const [products] = useState(data);
@@ -13,6 +19,7 @@ function App() {
 
 	const addItem = item => {
 		// add the given item to the cart
+		setCart(products)
 	};
 
 	return (
